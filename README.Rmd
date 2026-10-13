@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # enum <img src="man/figures/logo.png" align="right" height="120" alt="" />
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/LJ-Jenkins/enum/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/LJ-Jenkins/enum/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Create simple read-only enum objects for clearer semantic meaning in your code.
@@ -35,10 +36,18 @@ pak::pak("LJ-Jenkins/enum")
 
 Create a simple enum object that contains any read-only values/types:
 
-```{r example}
+```{r example, error=TRUE}
 library(enum)
 
 enum(a = 1, b = TRUE, c = "text", d = list(x = 1), e = mean)
+
+x <- enum(x = 1, y = list(z = 1))
+
+x$x <- 0
+x$y$z <- 0
+attr(x[["y"]][["z"]], "new") <- 0
+names(x$y$z) <- "new"
+x$new <- 0
 ```
 
 Create enum objects that enforce types:
@@ -60,7 +69,7 @@ enum_str(yes = "yes", no = "no", maybe = "")
 Change the class of the enum objects to define custom methods:
 
 ```{r class}
-mc <- enum(
+x <- enum(
   SUBSCRIPTION_COST = 1000,
   MEMBER = TRUE,
   MEMBER_DISCOUNT = 10L,
@@ -75,7 +84,7 @@ subscription_cost.SubCost <- function(x, ...) {
   x$SUBSCRIPTION_COST * (1 - x$MEMBER_DISCOUNT / 100)
 }
 
-subscription_cost(mc)
+subscription_cost(x)
 
 # or create a enum template
 create_color <- function(r, g, b) {
