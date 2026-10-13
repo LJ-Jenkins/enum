@@ -32,11 +32,11 @@ library(enum)
 
 enum(a = 1, b = TRUE, c = "text", d = list(x = 1), e = mean)
 #> Enum with members:
-#>  $e :function (x, ...)  
-#>  $d :List of 1 $ x: num 1
-#>  $c : chr "text"
-#>  $b : logi TRUE
 #>  $a : num 1
+#>  $b : logi TRUE
+#>  $c : chr "text"
+#>  $d :List of 1 $ x: num 1
+#>  $e :function (x, ...)
 ```
 
 Create enum objects that enforce types:
@@ -45,9 +45,9 @@ Create enum objects that enforce types:
 
 enum_lgl(yes = TRUE, no = FALSE, unknown = NA)
 #> Enum with <lgl> members:
-#>  $yes     : logi TRUE
 #>  $no      : logi FALSE
 #>  $unknown : logi NA
+#>  $yes     : logi TRUE
 
 enum_bool(yes = TRUE, no = FALSE, unknown = NA)
 #> Error:
@@ -55,21 +55,21 @@ enum_bool(yes = TRUE, no = FALSE, unknown = NA)
 
 enum_dbl(yes = 1.0, no = 2.0, maybe = NA_real_)
 #> Enum with <dbl> members:
-#>  $yes   : num 1
-#>  $no    : num 2
 #>  $maybe : num NA
+#>  $no    : num 2
+#>  $yes   : num 1
 
 enum_num(yes = 1L, no = 2.0, maybe = NA_real_)
 #> Enum with <num> members:
-#>  $yes   : int 1
-#>  $no    : num 2
 #>  $maybe : num NA
+#>  $no    : num 2
+#>  $yes   : int 1
 
 enum_chr(yes = "yes", no = "no", maybe = "")
 #> Enum with <chr> members:
-#>  $yes   : chr "yes"
-#>  $no    : chr "no"
 #>  $maybe : chr ""
+#>  $no    : chr "no"
+#>  $yes   : chr "yes"
 
 enum_str(yes = "yes", no = "no", maybe = "")
 #> Error:
