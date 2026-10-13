@@ -13,3 +13,5 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     utils
+URL: https://lj-jenkins.github.io/enum/, https://github.com/LJ-Jenkins/enum
+BugReports: https://github.com/LJ-Jenkins/enum/issues
