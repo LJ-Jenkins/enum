@@ -3,6 +3,16 @@
 Read-only name-value pairs that cannot be modified through the use of
 active bindings.
 
+## See also
+
+Useful links:
+
+- <https://lj-jenkins.github.io/enum/>
+
+- <https://github.com/LJ-Jenkins/enum>
+
+- Report bugs at <https://github.com/LJ-Jenkins/enum/issues>
+
 ## Author
 
 **Maintainer**: Luke Jenkins <luke-jenkins-dev@outlook.com>
