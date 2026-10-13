@@ -19,9 +19,7 @@ print.enum <- function(x, ...) {
     if (is.na(print_nm)) print_nm <- NULL
   }
 
-  x <- as.list(x)
-  nms <- names(x)
-
+  nms <- sort(names(x))
   chars <- nchar(nms)
   mx_chars <- max(chars)
 
@@ -31,12 +29,12 @@ print.enum <- function(x, ...) {
 
   if (!is.null(print_nm)) {
     cat("Enum with <", print_nm, "> members:\n", sep = "")
-    for (nm in rev(nms)) {
+    for (nm in nms) {
       cat(" $", pad(nm), " :", capstr(x[[nm]]), "\n", sep = "")
     }
   } else {
     cat("Enum with members:\n")
-    for (nm in rev(nms)) {
+    for (nm in nms) {
       cat(" $", pad(nm), " :", capstr(x[[nm]]), "\n", sep = "")
     }
   }

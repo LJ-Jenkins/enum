@@ -69,6 +69,9 @@ create_enum <- function(member_vals, member_nms, class_name, print_nm) {
 #'
 #' `enum_nmbr` enforces that all enum members are single, finite numeric
 #' values.
+#' @note
+#' Members of the enum object will be printed in sorted order by their names,
+#' not in the order they were defined.
 #' @examples
 #' enum(a = 1, b = TRUE, c = "text", d = list(x = 1), e = mean)
 #'
