@@ -30,6 +30,24 @@ enum(a = 1, b = TRUE, c = "text", d = list(x = 1), e = mean)
 #>  $c : chr "text"
 #>  $d :List of 1 $ x: num 1
 #>  $e :function (x, ...)
+
+x <- enum(x = 1, y = list(z = 1))
+
+x$x <- 0
+#> Error:
+#> ! Enums cannot be modified.
+x$y$z <- 0
+#> Error:
+#> ! Enums cannot be modified.
+attr(x[["y"]][["z"]], "new") <- 0
+#> Error:
+#> ! Enums cannot be modified.
+names(x$y$z) <- "new"
+#> Error:
+#> ! Enums cannot be modified.
+x$new <- 0
+#> Error in `x$new <- 0`:
+#> ! cannot add bindings to a locked environment
 ```
 
 Create enum objects that enforce types:
@@ -73,7 +91,7 @@ Change the class of the enum objects to define custom methods:
 
 ``` r
 
-mc <- enum(
+x <- enum(
   SUBSCRIPTION_COST = 1000,
   MEMBER = TRUE,
   MEMBER_DISCOUNT = 10L,
@@ -88,7 +106,7 @@ subscription_cost.SubCost <- function(x, ...) {
   x$SUBSCRIPTION_COST * (1 - x$MEMBER_DISCOUNT / 100)
 }
 
-subscription_cost(mc)
+subscription_cost(x)
 #> [1] 900
 
 # or create a enum template
