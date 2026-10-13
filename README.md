@@ -14,12 +14,6 @@ NOTE: in development and subject to change.
 
 ## Installation
 
-Install the latest release of enum from CRAN:
-
-``` r
-install.packages("enum")
-```
-
 You can install the development version of enum from GitHub:
 
 ``` r

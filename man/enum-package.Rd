@@ -9,6 +9,15 @@
 
 Read-only name-value pairs that cannot be modified through the use of active bindings.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://lj-jenkins.github.io/enum/}
+  \item \url{https://github.com/LJ-Jenkins/enum}
+  \item Report bugs at \url{https://github.com/LJ-Jenkins/enum/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Luke Jenkins \email{luke-jenkins-dev@outlook.com} (\href{https://orcid.org/0000-0002-7206-7242}{ORCID}) [copyright holder]
 
